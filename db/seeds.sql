@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name, devoured, id) VALUES ('Jalapeno', 'true' );
-INSERT INTO burgers (burger_name, devoured, id) VALUES ('Mushroom', 'false' );
-INSERT INTO burgers (burger_name, devoured, id) VALUES ('Western', 'false' );
+INSERT INTO burgers (burger_name, devoured) VALUES ('Jalapeno', false);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Mushroom', false);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Western', false);
