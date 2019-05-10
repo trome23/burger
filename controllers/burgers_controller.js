@@ -5,11 +5,12 @@ var router = express.Router();
 var burger = require("../models/burger")
 
 router.get("/", function(req, res) {
-    burger.all(function(data) {
-      var hbsObject = {
-        burger: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
-    });
+    console.log('the home "/" route is being used');
+    res.send('Burgers Home Page')
   });
+
+  router.get("/about", function(req, res) {
+    res.send('About Burgers')
+  });
+
+module.exports = router;

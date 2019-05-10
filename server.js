@@ -8,6 +8,10 @@ var app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+var routes = require("../burger/controllers/burgers_controller")
+
+app.use(routes)
+
 app.listen(PORT, function() {
     console.log('our server is up and running on port: ' + PORT);;
 })
