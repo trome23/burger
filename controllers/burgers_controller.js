@@ -1,12 +1,12 @@
 var express = require("express");
 
+var burgerModel = require("../models/burger")
+
 var router = express.Router();
 
-var burger = require("../models/burger")
-
 router.get("/", function(req, res) {
-    console.log('the home "/" route is being used');
-    res.send('Burgers Home Page')
+    burgerModel.getAllBurgers()
+  res.end()
   });
 
   router.get("/about", function(req, res) {
