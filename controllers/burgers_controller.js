@@ -6,8 +6,10 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
     burgerModel.getAllBurgers(function(data) {
-      console.log(data, "this is the function from appCtrl and the data is the date coming from out db");
-      res.end()
+      var burgerObj={
+        burgers: data
+      }
+      res.render("index", burgerObj)
     })
   });
 
