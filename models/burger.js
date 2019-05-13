@@ -5,6 +5,9 @@ module.exports = {
   getAllBurgers: function(cb) {
     orm.selectAll('burgers', cb)
   }
+  // postBurger: function(){
+
+  // }
 }
 
 // var burger = {

@@ -13,4 +13,14 @@ $(document).on("click", ".delete", function(event) {
 $(document).on("click", "#addBurger", function(event) {
     event.preventDefault();
     console.log("addBurger has been clicked on"); 
+    $.ajax({
+        url: "/api/burger",
+        method: "POST",
+        data: {
+            burger_name: $("#burger_name").val().trim()
+        }
+    }).then(function(serverResponse){
+        console.log(serverResponse);
+        
+    })
 })
