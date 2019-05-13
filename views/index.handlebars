@@ -5,8 +5,8 @@
     {{#each burgers}}
         <div>
             {{#unless devoured}}
-                <p>{{this.burger}}</p>
-                <button data-id={{this.id}} class="done">done</button>              
+                <p>Burger: {{this.burger}}</p>
+                <button data-id={{this.id}} class="complete">Devour</button>              
                 <hr>
             {{/unless}}
         </div>
@@ -24,6 +24,10 @@
             {{/if}}
         </div>
     {{/each}}
+    <hr>
+    <h4>Add a Burger</h4>
+    <input type="text" id="addBurger">
+    <button id ="addBurger">Add Burger</button>
 </div>
  
 
