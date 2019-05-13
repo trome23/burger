@@ -13,8 +13,11 @@ router.get("/", function(req, res) {
 
   router.post("/api/burger", function(req, res) {
     console.log(req.body);
-    
-    res.end()
+    var fEData = req.body;
+    burgerModel.postBurger(fEData, function(data){
+      console.log(data);
+      res.end()
+    })
   });
 
   router.put("/api/burger/:id", function(req, res) {

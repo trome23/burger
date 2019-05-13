@@ -10,6 +10,16 @@ module.exports = {
       }       
       cb(data)
     })
+  },
+  insertInto: function(table, col, fEData, cb) {
+    var queryString = "INSERT INTO ?? (??) VALUES (?)"
+
+    connection.query(queryString, [table, col, fEData.burger_name], function(err, data) {
+      if (err) {
+        throw err;
+      }       
+      cb(data)
+    })
   }
 }
 
