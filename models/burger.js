@@ -2,8 +2,8 @@ var orm = require("../config/orm");
 // console.log(orm);
 
 module.exports = {
-  getAllBurgers: function() {
-    orm.selectAll('burgers')
+  getAllBurgers: function(cb) {
+    orm.selectAll('burgers', cb)
   }
 }
 

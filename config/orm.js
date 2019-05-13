@@ -1,15 +1,14 @@
 var connection = require("./connection");
 
 module.exports = {
-  selectAll: function(table) {
+  selectAll: function(table, cb) {
     var queryString = "SELECT * FROM ??"
 
     connection.query(queryString, [table], function(err, data) {
       if (err) {
         throw err;
-      } 
-      console.log(data);
-      
+      }       
+      cb(data)
     })
   }
 }
