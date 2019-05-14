@@ -7,6 +7,12 @@ module.exports = {
   },
   postBurger: function(fEData, cb){
     orm.insertInto('burgers', 'burger_name', fEData, cb)
+  },
+  putBurger: function(id, cb){
+    orm.updateRow("burgers", id, cb)
+  },
+  deleteBurger: function(id, cb){
+    orm.deleteRow("burger", id, cb)
   }
 }
 

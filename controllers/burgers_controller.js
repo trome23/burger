@@ -16,16 +16,27 @@ router.get("/", function(req, res) {
     var fEData = req.body;
     burgerModel.postBurger(fEData, function(data){
       console.log(data);
-      res.end()
+      res.send()
     })
   });
 
   router.put("/api/burger/:id", function(req, res) {
-    res.send('About Burgers')
+    console.log(req.params.id);
+    var id = req.params.id;
+    burgerModel.putBurger(id, function(data){
+      console.log(data, "row updated");
+      
+      res.send('update happended on ' + id)
+    })
   });
 
   router.delete("/api/burger/:id", function(req, res) {
-    res.send('About Burgers')
+    var id = req.params.id;
+    console.log(id);
+    burgerModel.deleteBurger(id, function(data){
+      console.log(data);
+      res.end()
+    });
   });
 
 module.exports = router;
