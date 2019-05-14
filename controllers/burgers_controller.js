@@ -35,7 +35,7 @@ router.get("/", function(req, res) {
     console.log(id);
     burgerModel.deleteBurger(id, function(data){
       console.log(data);
-      res.end()
+      res.send("row deleted")
     });
   });
 

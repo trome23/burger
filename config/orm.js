@@ -22,7 +22,7 @@ module.exports = {
     })
   }, 
   updateRow: function(table, id, cb){
-    var queryString = "DELETE FROM burgers WHERE id = 3"
+    var queryString = "UPDATE ?? SET devoured = 1 WHERE id = ?"
 
     connection.query(queryString, [table, id], function(err, data) {
       if (err) {
@@ -31,10 +31,15 @@ module.exports = {
       cb(data)
     })
   },
-  deleteRow: function(){
+  deleteRow: function(table, id, cb){
+    var queryString = "DELETE FROM ?? WHERE id = ?"
 
+    connection.query(queryString, [table, id], function(err, data) {
+      if (err) {
+        throw err;
+      }       
+      cb(data)
+    })
   }
 }
 
-
-//"DELETE FROM burgers WHERE id = 3"

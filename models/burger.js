@@ -12,7 +12,7 @@ module.exports = {
     orm.updateRow("burgers", id, cb)
   },
   deleteBurger: function(id, cb){
-    orm.deleteRow("burger", id, cb)
+    orm.deleteRow("burgers", id, cb)
   }
 }
 
