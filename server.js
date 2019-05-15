@@ -16,9 +16,9 @@ var routes = require("../burger/controllers/burgers_controller")
 
 app.use(routes)
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
+app.listen(PORT, function() {
+    console.log('our server is up and running on port: ' + PORT);;
+})
 
 // burgers{
 //     id: 1,
