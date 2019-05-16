@@ -16,6 +16,13 @@ var routes = require("../burger/controllers/burgers_controller")
 
 app.use('/', routes);
 
+app.use(timeout(15000));
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next) {
+    if (!req.timedout) next();
+}
+
 app.listen(PORT, function() {
     console.log('our server is up and running on port: ' + PORT);;
 })
